@@ -56,6 +56,7 @@ apps=(
 # Build tools- install these first so other tools are built with them.
 build=(
   autoconf
+  automake
   bash
   coreutils
   findutils
