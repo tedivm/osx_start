@@ -130,7 +130,7 @@ then
     echo "Build path already saved..."
 else
     echo "Saving build path to ~/.profile..."
-    echo  $buildPathInfo >> ~/.profile
+    echo  $buildPathAddition >> ~/.profile
     echo "export ANDROID_HOME=/usr/local/opt/android-sdk" >> ~/.profile
 
 fi
