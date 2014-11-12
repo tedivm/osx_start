@@ -27,6 +27,7 @@ apps=(
   iterm2
   kindle
   lastpass-universal
+  libreoffice
   mou
   omnigraffle
   omnioutliner
