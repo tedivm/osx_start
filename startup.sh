@@ -12,6 +12,7 @@ apps=(
   arduino
   atom
   caffeine
+  composer
   crashplan
   cyberduck
   disk-inventory-x
@@ -86,6 +87,10 @@ fonts=(
   font-roboto
 )
 
+gems=(
+  puppet-lint
+)
+
 # Atom plugins with apm
 atom=(
   atom-beautify
@@ -121,6 +126,7 @@ fi
 # Add the base stuff
 echo "Installing base build packages..."
 brew tap homebrew/dupes
+brew tap homebrew/php
 brew install ${build[@]}
 
 
@@ -166,6 +172,15 @@ brew cask install ${fonts[@]}
 echo "Installing atom packages..."
 apm install ${atom[@]}
 
+
+# Install gems
+echo "Installing ruby gems..."
+sudo gem install ${gem[@]}
+
+
+
+# Update composer
+composer selfupdate
 
 # Right now cleanup
 echo "Cleaning up..."
