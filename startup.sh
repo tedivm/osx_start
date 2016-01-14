@@ -9,8 +9,6 @@
 # Apps to install with Caskroom.
 # Installed to /opt/homebrew-cask/Caskroom/ and linked to /Applications.
 apps=(
-  adium
-  apikitchen
   arduino
   atom
   caffeine
@@ -20,12 +18,8 @@ apps=(
   dropbox
   firefox
   flash
-  flux
   github
-  google-chrome
   hermes
-  iterm2
-  kindle
   lastpass-universal
   libreoffice
   mou
@@ -36,20 +30,14 @@ apps=(
   qlprettypatch
   qlstephen
   quicklook-json
-  send-to-kindle
   sequel-pro
-  sketch
   skype
   slack
   spotify
-  sublime-text3
   the-unarchiver
   textmate
-  tower
   transmission
-  transmit
   vagrant
-  versions
   virtualbox
 )
 
