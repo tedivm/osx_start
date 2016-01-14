@@ -86,6 +86,26 @@ fonts=(
   font-roboto
 )
 
+# Atom plugins with apm
+atom=(
+  atom-beautify
+  atom-terminal
+  language-puppet
+  language-markdown
+  linter
+  linter-js-yaml
+  linter-puppet-lint
+  markdown-toc
+  markdown-preview
+  markdown-lists
+  merge-conflicts
+  tabs-to-spaces
+  wordcount
+  autocomplete-python
+  atom-autocomplete-php
+  autocomplete-ruby
+  travis-ci-status
+)
 
 # Trigger OSX CLI Install package if needed, otherwise do nothing.
 echo "Checking for Xcode Command Line Tools"
@@ -141,6 +161,11 @@ brew cask install --appdir="/Applications" ${apps[@]}
 echo "Installing fonts..."
 brew tap caskroom/fonts
 brew cask install ${fonts[@]}
+
+
+# Install atom packages
+echo "Installing atom packages..."
+apm install ${atom[@]}
 
 
 # Right now cleanup
