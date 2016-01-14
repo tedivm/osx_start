@@ -96,7 +96,6 @@ atom=(
   linter-js-yaml
   linter-puppet-lint
   markdown-toc
-  markdown-preview
   markdown-lists
   merge-conflicts
   tabs-to-spaces
