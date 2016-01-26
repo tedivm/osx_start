@@ -87,9 +87,18 @@ fonts=(
   font-roboto
 )
 
+# Applications available via gem installer
 gems=(
   puppet-lint
+  jekyll
 )
+
+
+# Applications available via pip installer
+pips=(
+  awscli
+)
+
 
 # Atom plugins with apm
 atom=(
@@ -114,6 +123,11 @@ atom=(
 # Trigger OSX CLI Install package if needed, otherwise do nothing.
 echo "Checking for Xcode Command Line Tools"
 gcc --version > /dev/null
+
+
+# Check for PIP and install it if it's not available.
+echo "Installing pip..."
+sudo easy_install pip
 
 
 # Check for Homebrew, install if we don't have it
@@ -178,9 +192,14 @@ echo "Installing ruby gems..."
 sudo gem install ${gem[@]}
 
 
+# Install pips
+echo "Installing python pips..."
+sudo pip install ${pip[@]} --upgrade --ignore-installed six
+
 
 # Update composer
 composer selfupdate
+
 
 # Right now cleanup
 echo "Cleaning up..."
