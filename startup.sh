@@ -85,6 +85,7 @@ fonts=(
   font-inconsolata
   font-m-plus
   font-roboto
+  font-microsoft-office
 )
 
 # Applications available via gem installer
@@ -179,6 +180,7 @@ brew cask install --appdir="/Applications" ${apps[@]}
 # Install fonts
 echo "Installing fonts..."
 brew tap caskroom/fonts
+brew tap colindean/fonts-nonfree
 brew cask install ${fonts[@]}
 
 
