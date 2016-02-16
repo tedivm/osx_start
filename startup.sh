@@ -70,6 +70,7 @@ binaries=(
   pcre
   python
   rename
+  shellcheck
   sshfs
   trash
   tree
@@ -110,6 +111,7 @@ atom=(
   linter
   linter-js-yaml
   linter-puppet-lint
+  linter-shellcheck
   markdown-toc
   markdown-lists
   merge-conflicts
