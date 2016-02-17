@@ -65,6 +65,7 @@ binaries=(
   graphicsmagick
   hhvm
   hub
+  mtr
   nmap
   node
   pcre
@@ -165,6 +166,9 @@ else
     echo "export ANDROID_HOME=/usr/local/opt/android-sdk" >> ~/.profile
 
 fi
+
+echo 'Add /usr/local/sbin to path ...'
+echo "PATH=/usr/local/sbin:$PATH" >> ~/.profile
 
 
 # Add base packages
