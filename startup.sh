@@ -21,6 +21,7 @@ apps=(
   flash
   github
   hermes
+  java
   lastpass-universal
   libreoffice
   mou
