@@ -52,6 +52,7 @@ build=(
   coreutils
   findutils
   homebrew/dupes/grep
+  imagemagick
 )
 
 
