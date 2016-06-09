@@ -211,6 +211,11 @@ sudo pip install ${pip[@]} --upgrade --ignore-installed six
 composer selfupdate
 
 
+# Apply settings
+echo "Disabling iTunes autostart on media keys..."
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+
+
 # Right now cleanup
 echo "Cleaning up..."
 brew cleanup
