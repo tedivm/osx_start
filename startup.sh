@@ -337,6 +337,11 @@ if [ ! -f ~/.gitignore ]; then
 fi
 
 
+# Apply settings
+echo "Disabling iTunes autostart on media keys..."
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+
+
 # Right now cleanup
 echo "Cleaning up..."
 brew cleanup
