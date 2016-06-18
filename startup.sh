@@ -20,6 +20,7 @@ apps=(
   crashplan
   cyberduck
   disk-inventory-x
+  dockertoolbox
   dropbox
   firefox
   flash
@@ -41,6 +42,7 @@ apps=(
   textmate
   transmission
   vagrant
+  vagrant-manager
   virtualbox
   xquartz
 )
@@ -90,6 +92,7 @@ binaries=(
   node
   pcre
   python
+  pyqt
   rename
   shellcheck
   sshfs
@@ -97,6 +100,7 @@ binaries=(
   tree
   webkit2png
   wget
+  zeromq
   zopfli
 )
 
@@ -120,11 +124,23 @@ gems=(
 # Applications available via pip installer
 pips=(
   awscli
+  jinja2
   nose
+  pep8
   pyparsing
   python-dateutil
-  pep8
+  pygments
+  pyzmq
+  tornado
   virtualenv
+  ipython
+)
+
+
+# Applications available via gem installer
+npms_global=(
+  coffee-script
+  grunt-cli
 )
 
 
@@ -302,8 +318,15 @@ sudo -v
 echo "Installing ruby gems..."
 sudo gem install "${gems[@]}"
 
-# Refresh sudo
-sudo -v
+
+# Install gems
+echo "Installing npm globals..."
+for i in "${npms_global[@]}"
+do
+  echo "Installing $i..."
+  sudo npm install -g "$i"
+done
+
 
 # Install pips
 echo "Installing python pips..."
