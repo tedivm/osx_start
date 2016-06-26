@@ -34,6 +34,7 @@ apps=(
   omnigraffle
   omnioutliner
   phpstorm
+  seashore
   sequel-pro
   skype
   slack
