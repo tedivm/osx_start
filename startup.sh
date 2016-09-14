@@ -163,6 +163,7 @@ atom=(
   autocomplete-ruby
   badges
   file-type-icons
+  language-groovy
   language-protobuf
   language-puppet
   language-restructuredtext
