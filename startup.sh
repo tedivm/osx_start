@@ -171,6 +171,7 @@ atom=(
   linter
   linter-js-standard
   linter-js-yaml
+  linter-jshint
   linter-php
   linter-protocol-buffer
   linter-puppet-lint
