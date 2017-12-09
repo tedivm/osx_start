@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# OSX Start v1.0.0
-# (c)2014 Robert Hafner <tedivm@tedivm.com>
+# OSX Start v1.1.0
+# (c)2017 Robert Hafner <tedivm@tedivm.com>
 # MIT License (see LICENSE file)
 # https://github.com/tedivm/osx_start
 
@@ -17,7 +17,6 @@ apps=(
   atom
   caffeine
   cheatsheet
-  crashplan
   cyberduck
   disk-inventory-x
   dockertoolbox
@@ -33,7 +32,6 @@ apps=(
   mou
   omnigraffle
   omnioutliner
-  phpstorm
   seashore
   sequel-pro
   skype
@@ -80,13 +78,13 @@ build=(
 binaries=(
   ack
   android-sdk
+  boost
   cmake
   curl
   ffmpeg
   git
   graphicsmagick
   homebrew/php/composer
-  hhvm
   hub
   mtr
   nmap
@@ -141,7 +139,17 @@ pips=(
 # Applications available via gem installer
 npms_global=(
   coffee-script
+  express-generator
+  generator-express-no-stress
+  git-labelmaker
   grunt-cli
+  gulp
+  jsonsmash
+  nativescript
+  sloc
+  standard
+  yarn
+  yo
 )
 
 
