@@ -157,13 +157,19 @@ brew_science=(
 atom=(
   atom-autocomplete-php
   atom-beautify
+  atom-jinja2
   atom-terminal
   autocomplete-php
   autocomplete-python
   autocomplete-ruby
   badges
+  color-picker
+  dash-ui
+  es6-javascript
   file-type-icons
+  impure-syntax
   language-groovy
+  language-pgsql
   language-protobuf
   language-puppet
   language-restructuredtext
@@ -175,6 +181,7 @@ atom=(
   linter-php
   linter-protocol-buffer
   linter-puppet-lint
+  linter-python
   linter-shellcheck
   markdown-toc
   markdown-lists
