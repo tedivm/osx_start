@@ -86,10 +86,13 @@ binaries=(
   graphicsmagick
   homebrew/php/composer
   hub
+  jq
   mtr
   nmap
+  libyaml
   node
   pcre
+  pngcrush
   python
   pyqt
   rename
@@ -97,6 +100,7 @@ binaries=(
   sshfs
   trash
   tree
+  watch
   webkit2png
   wget
   zeromq
@@ -145,6 +149,7 @@ npms_global=(
   grunt-cli
   gulp
   jsonsmash
+  mklicense
   nativescript
   sloc
   standard
