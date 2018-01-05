@@ -88,6 +88,7 @@ binaries=(
   hub
   jq
   mtr
+  nano
   nmap
   libyaml
   node
@@ -209,6 +210,9 @@ atom=(
   tidy-markdown
   wordcount
 )
+
+# Enable syntax highlighting for nano
+echo 'include /usr/local/share/nano/*.nanorc' > .nanorc
 
 # Initial sudo now so we can walk away from the script.
 sudo -v
