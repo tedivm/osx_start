@@ -141,7 +141,7 @@ pips=(
 )
 
 
-# Applications available via gem installer
+# Applications available via npm installer
 npms_global=(
   coffee-script
   express-generator
@@ -179,9 +179,11 @@ atom=(
   badges
   color-picker
   dash-ui
+  docker
   es6-javascript
   file-type-icons
   impure-syntax
+  language-docker
   language-groovy
   language-pgsql
   language-protobuf
@@ -189,6 +191,7 @@ atom=(
   language-restructuredtext
   language-markdown
   linter
+  linter-docker
   linter-js-standard
   linter-js-yaml
   linter-jshint
