@@ -139,7 +139,7 @@ pips=(
 
 # Applications available via npm installer
 npms_global=(
-  coffee-script
+  coffeescript
   express-generator
   generator-express-no-stress
   git-labelmaker
