@@ -19,20 +19,17 @@ apps=(
   cheatsheet
   cyberduck
   disk-inventory-x
-  dockertoolbox
+  docker-toolbox
   dropbox
   firefox
-  flash
   github
   hermes
   istumbler
   java
-  lastpass-universal
   libreoffice
   mou
   omnigraffle
   omnioutliner
-  seashore
   sequel-pro
   skype
   slack
@@ -98,7 +95,6 @@ binaries=(
   pyqt
   rename
   shellcheck
-  sshfs
   trash
   tree
   watch
@@ -249,9 +245,6 @@ sudo -v
 
 # Add the base stuff
 echo "Installing base build packages..."
-brew tap homebrew/dupes
-brew tap homebrew/php
-brew tap hhvm/hhvm
 brew install ${build[@]}
 
 # Refresh sudo
