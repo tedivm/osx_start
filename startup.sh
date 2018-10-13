@@ -89,6 +89,7 @@ binaries=(
   nmap
   libyaml
   node
+  pandoc
   pcre
   pngcrush
   python
