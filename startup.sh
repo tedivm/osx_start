@@ -371,7 +371,7 @@ composer selfupdate
 
 echo "Configuring git..."
 currentuser=$(whoami)
-sudo chown -R ${currentuser}:${currentuser} .config
+sudo chown -R ${currentuser}:staff .config
 git config --global user.name "$user"
 git config --global user.email "$email"
 git config --global credential.helper osxkeychain
