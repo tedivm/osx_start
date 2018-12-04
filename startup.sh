@@ -393,6 +393,5 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 # Right now cleanup
 echo "Cleaning up..."
 brew cleanup
-brew cask cleanup
 
 echo "All done!"
