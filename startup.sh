@@ -149,6 +149,7 @@ npms_global=(
   jsonsmash
   mklicense
   nativescript
+  serve
   sloc
   standard
   yarn
