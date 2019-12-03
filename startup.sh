@@ -203,6 +203,7 @@ atom=(
   merge-conflicts
   php-analyser
   php-cs-fixer
+  python-black
   pigments
   rst-preview
   rst-preview-pandoc
