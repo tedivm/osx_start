@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# OSX Start v1.1.0
+# OSX Start v1.2.0
 # (c)2017 Robert Hafner <tedivm@tedivm.com>
 # MIT License (see LICENSE file)
 # https://github.com/tedivm/osx_start
@@ -14,11 +14,11 @@ apps=(
   appcleaner
   arduino
   asepsis
-  atom
   caffeine
   cheatsheet
   cyberduck
   disk-inventory-x
+  docker
   docker-toolbox
   dropbox
   firefox
@@ -28,8 +28,6 @@ apps=(
   java
   libreoffice
   mou
-  omnigraffle
-  omnioutliner
   sequel-pro
   skype
   slack
@@ -40,6 +38,7 @@ apps=(
   vagrant
   vagrant-manager
   virtualbox
+  visual-studio-code
   xquartz
 )
 
@@ -80,6 +79,7 @@ binaries=(
   curl
   ffmpeg
   git
+  golang
   graphicsmagick
   homebrew/php/composer
   hub
@@ -141,15 +141,18 @@ pips=(
 # Applications available via npm installer
 npms_global=(
   coffeescript
+  create-app-react-express
   express-generator
   generator-express-no-stress
   git-labelmaker
   grunt-cli
   gulp
+  http-server
   jsonsmash
   mklicense
   nativescript
   serve
+  serverless
   sloc
   standard
   yarn
@@ -164,54 +167,6 @@ brew_science=(
   matplotlib
 )
 
-
-# Atom plugins with apm
-atom=(
-  atom-autocomplete-php
-  atom-beautify
-  atom-jinja2
-  atom-terminal
-  autocomplete-php
-  autocomplete-python
-  autocomplete-ruby
-  badges
-  color-picker
-  dash-ui
-  docker
-  es6-javascript
-  file-type-icons
-  impure-syntax
-  language-docker
-  language-groovy
-  language-pgsql
-  language-protobuf
-  language-puppet
-  language-restructuredtext
-  language-markdown
-  linter
-  linter-docker
-  linter-js-standard
-  linter-js-yaml
-  linter-jshint
-  linter-php
-  linter-protocol-buffer
-  linter-puppet-lint
-  linter-python
-  linter-shellcheck
-  markdown-toc
-  markdown-lists
-  merge-conflicts
-  php-analyser
-  php-cs-fixer
-  python-black
-  pigments
-  rst-preview
-  rst-preview-pandoc
-  tabs-to-spaces
-  travis-ci-status
-  tidy-markdown
-  wordcount
-)
 
 # Enable syntax highlighting for nano
 echo 'include /usr/local/share/nano/*.nanorc' > .nanorc
@@ -326,26 +281,12 @@ done
 # Refresh sudo
 sudo -v
 
-# Install atom packages
-echo "Installing atom packages..."
-for i in "${atom[@]}"
-do
-  echo "Installing $i..."
-  apm install "$i"
-  # Refresh sudo
-  sudo -v
-done
-
-
-# Refresh sudo
-sudo -v
-
 # Install gems
 echo "Installing ruby gems..."
 sudo gem install "${gems[@]}"
 
 
-# Install gems
+# Install npm packages
 echo "Installing npm globals..."
 for i in "${npms_global[@]}"
 do
@@ -383,7 +324,10 @@ if [ ! -f ~/.gitignore ]; then
   echo '._*' >> ~/.gitignore
   echo 'Thumbs.db' >> ~/.gitignore
   echo '.Spotlight-V100' >> ~/.gitignore
-  echo '.Trashes' >> ~/.gitignore
+  echo '.ruby-version' >> ~/.gitignore
+  echo '.gitcredentials' >> ~/.gitignore
+  echo 'github_app.private-key.pem' >> ~/.gitignore
+  echo '.vscode*' >> ~/.gitignore
 fi
 
 
