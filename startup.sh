@@ -13,7 +13,6 @@ email='tedivm@tedivm.com'
 apps=(
   appcleaner
   arduino
-  asepsis
   caffeine
   cheatsheet
   cyberduck
@@ -27,7 +26,6 @@ apps=(
   istumbler
   java
   libreoffice
-  mou
   sequel-pro
   skype
   slack
@@ -44,7 +42,6 @@ apps=(
 
 # Plugins to install with cask
 plugins=(
-  betterzipql
   qlcolorcode
   qlstephen
   qlmarkdown
@@ -65,7 +62,7 @@ build=(
   coreutils
   findutils
   gcc
-  homebrew/dupes/grep
+  grep
   imagemagick
 )
 
@@ -73,7 +70,6 @@ build=(
 # CLI applications to install with Brew.
 binaries=(
   ack
-  android-sdk
   boost
   cmake
   curl
@@ -239,7 +235,7 @@ do
   sudo -v
 done
 
-brew tap caskroom/cask
+brew tap homebrew/cask
 
 
 # Refresh sudo
@@ -270,7 +266,7 @@ sudo -v
 
 # Install fonts
 echo "Installing fonts..."
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew tap colindean/fonts-nonfree
 for i in "${fonts[@]}"
 do
@@ -297,7 +293,7 @@ done
 
 # Install pips
 echo "Installing python pips..."
-sudo pip install "${pips[@]}" --upgrade --ignore-installed six
+sudo python3 -m pip install "${pips[@]}" --upgrade --ignore-installed six
 
 # Refresh sudo
 sudo -v
@@ -329,11 +325,6 @@ if [ ! -f ~/.gitignore ]; then
   echo 'github_app.private-key.pem' >> ~/.gitignore
   echo '.vscode*' >> ~/.gitignore
 fi
-
-
-# Apply settings
-echo "Disabling iTunes autostart on media keys..."
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
 
 # Right now cleanup
