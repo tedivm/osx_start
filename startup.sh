@@ -64,10 +64,11 @@ build=(
   gcc
   grep
   imagemagick
+  zlib
 )
 
 
-# CLI applications to install with Brew.
+# Standard applications to install with Brew (not using casks).
 binaries=(
   ack
   boost
@@ -84,10 +85,12 @@ binaries=(
   nano
   nmap
   libyaml
+  lunar
   node
   pandoc
   pcre
   pngcrush
+  pyenv
   python
   pyqt
   rename
@@ -175,6 +178,7 @@ sudo -v
 echo "Checking for Xcode Command Line Tools"
 gcc --version > /dev/null
 
+#
 
 # Check for PIP and install it if it's not available.
 if test ! $(which pip); then
@@ -219,11 +223,19 @@ if grep -q "$buildPathAddition" ~/.profile
 then
     echo "Build path already saved..."
 else
-    echo "Saving build path to ~/.profile..."
-    echo  $buildPathAddition >> ~/.profile
-    echo "export ANDROID_HOME=/usr/local/opt/android-sdk" >> ~/.profile
+    echo "Saving build path to ~/.zshrc..."
+    echo  $buildPathAddition >> ~/.zshrc
+    
+    # The system zlib is currently broken
+    echo "export LDFLAGS=\"-L/usr/local/opt/zlib/lib\""  >> ~/.zshrc
+    echo "export CPPFLAGS=\"-I/usr/local/opt/zlib/include\""  >> ~/.zshrc
+    echo "export PKG_CONFIG_PATH=\"/usr/local/opt/zlib/lib/pkgconfig\""  >> ~/.zshrc
 fi
 
+# The system zlib is currently broken
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 
 # Add base packages
 echo "Installing binaries..."
