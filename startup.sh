@@ -95,6 +95,7 @@ binaries=(
   pyqt
   rename
   shellcheck
+  tfenv
   trash
   tree
   watch
