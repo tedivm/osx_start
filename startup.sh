@@ -327,6 +327,8 @@ sudo chown -R ${currentuser}:staff .config
 git config --global user.name "$user"
 git config --global user.email "$email"
 git config --global credential.helper osxkeychain
+git config --global pull.rebase true
+git config --global rebase.autoStash true
 if [ ! -f ~/.gitignore ]; then
   touch ~/.gitignore
   echo '.DS_Store' >> ~/.gitignore
