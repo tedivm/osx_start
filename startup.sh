@@ -11,46 +11,12 @@ email='tedivm@tedivm.com'
 # Apps to install with Caskroom.
 # Installed to /opt/homebrew-cask/Caskroom/ and linked to /Applications.
 apps=(
-  appcleaner
-  arduino
   caffeine
-  cheatsheet
-  cyberduck
-  disk-inventory-x
-  docker
-  docker-toolbox
-  dropbox
-  firefox
   github
-  hermes
   istumbler
   java
-  libreoffice
   sequel-pro
-  skype
-  slack
-  spotify
   the-unarchiver
-  textmate
-  transmission
-  vagrant
-  vagrant-manager
-  virtualbox
-  visual-studio-code
-  xquartz
-)
-
-# Plugins to install with cask
-plugins=(
-  qlcolorcode
-  qlstephen
-  qlmarkdown
-  qlprettypatch
-  qlprettypatch
-  quicklook-csv
-  quicklook-json
-  suspicious-package
-  webpquicklook
 )
 
 
@@ -78,7 +44,6 @@ binaries=(
   git
   golang
   graphicsmagick
-  homebrew/php/composer
   hub
   jq
   mtr
@@ -115,57 +80,16 @@ fonts=(
   font-microsoft-office
 )
 
-# Applications available via gem installer
-gems=(
-  puppet-lint
-  jekyll
-)
-
-
-# Applications available via pip installer
-pips=(
-  awscli
-  jinja2
-  nose
-  pep8
-  pyparsing
-  python-dateutil
-  pygments
-  pyzmq
-  tornado
-  virtualenv
-  ipython
-)
-
 
 # Applications available via npm installer
 npms_global=(
-  coffeescript
-  create-app-react-express
-  express-generator
-  generator-express-no-stress
-  git-labelmaker
-  grunt-cli
-  gulp
   http-server
   jsonsmash
-  mklicense
-  nativescript
-  serve
-  serverless
   sloc
   standard
   yarn
-  yo
 )
 
-
-# These packages have to be installed after pip.
-brew_science=(
-  numpy
-  scipy
-  matplotlib
-)
 
 
 # Enable syntax highlighting for nano
@@ -178,14 +102,6 @@ sudo -v
 # Trigger OSX CLI Install package if needed, otherwise do nothing.
 echo "Checking for Xcode Command Line Tools"
 gcc --version > /dev/null
-
-#
-
-# Check for PIP and install it if it's not available.
-if test ! $(which pip); then
-  echo "Installing pip..."
-  sudo easy_install pip
-fi
 
 
 # Refresh sudo
@@ -226,7 +142,7 @@ then
 else
     echo "Saving build path to ~/.zshrc..."
     echo  $buildPathAddition >> ~/.zshrc
-    
+
     # The system zlib is currently broken
     echo "export LDFLAGS=\"-L/usr/local/opt/zlib/lib\""  >> ~/.zshrc
     echo "export CPPFLAGS=\"-I/usr/local/opt/zlib/include\""  >> ~/.zshrc
@@ -248,25 +164,12 @@ do
   sudo -v
 done
 
-brew tap homebrew/cask
-
 
 # Refresh sudo
 sudo -v
 
 echo "Installing apps..."
 for i in "${apps[@]}"
-do
-  echo "Installing $i..."
-  brew cask install "$i"
-  # Refresh sudo
-  sudo -v
-done
-
-
-# Install plugins.
-echo "installing plugins..."
-for i in "${plugins[@]}"
 do
   echo "Installing $i..."
   brew cask install "$i"
@@ -290,10 +193,6 @@ done
 # Refresh sudo
 sudo -v
 
-# Install gems
-echo "Installing ruby gems..."
-sudo gem install "${gems[@]}"
-
 
 # Install npm packages
 echo "Installing npm globals..."
@@ -304,26 +203,12 @@ do
 done
 
 
-# Install pips
-echo "Installing python pips..."
-sudo python3 -m pip install "${pips[@]}" --upgrade --ignore-installed six
-
 # Refresh sudo
 sudo -v
 
-# Add the base stuff
-echo "Installing python science packages..."
-brew install "${brew_science[@]}"
-
-
-# Update composer
-echo "Self update composer..."
-composer selfupdate
-
-
 echo "Configuring git..."
 currentuser=$(whoami)
-sudo chown -R ${currentuser}:staff .config
+sudo chown -R ${currentuser}:staff ~/.config
 git config --global user.name "$user"
 git config --global user.email "$email"
 git config --global credential.helper osxkeychain
