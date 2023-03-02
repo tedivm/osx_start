@@ -174,7 +174,7 @@ echo "Installing apps..."
 for i in "${apps[@]}"
 do
   echo "Installing $i..."
-  brew cask install "$i"
+  brew install "$i" --cask
   # Refresh sudo
   sudo -v
 done
