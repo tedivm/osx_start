@@ -90,6 +90,8 @@ npms_global=(
   yarn
 )
 
+# Manually trigger cleanup at the end.
+export HOMEBREW_NO_INSTALL_CLEANUP="no"
 
 
 # Enable syntax highlighting for nano
