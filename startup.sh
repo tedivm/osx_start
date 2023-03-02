@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# OSX Start v1.2.0
+# OSX Start v1.3.0
 # (c)2017 Robert Hafner <tedivm@tedivm.com>
 # MIT License (see LICENSE file)
 # https://github.com/tedivm/osx_start
