@@ -227,6 +227,7 @@ if [ ! -f ~/.gitignore ]; then
   echo 'github_app.private-key.pem' >> ~/.gitignore
   echo '.vscode*' >> ~/.gitignore
 fi
+git config --global core.excludesFile '~/.gitignore'
 
 
 # Right now cleanup
