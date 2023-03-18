@@ -11,12 +11,15 @@ email='tedivm@tedivm.com'
 # Apps to install with Caskroom.
 # Installed to /opt/homebrew-cask/Caskroom/ and linked to /Applications.
 apps=(
+  docker
   caffeine
   github
   istumbler
   java
   sequel-pro
   the-unarchiver
+  slack
+  spotify
 )
 
 
@@ -95,7 +98,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP="no"
 
 
 # Enable syntax highlighting for nano
-echo 'include /usr/local/share/nano/*.nanorc' > .nanorc
+echo 'include /usr/local/share/nano/*.nanorc' > ~/.nanorc
 
 # Initial sudo now so we can walk away from the script.
 sudo -v
@@ -112,8 +115,9 @@ sudo -v
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
-  echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo "Please install Homebrew before running this script"
+  open "https://brew.sh/"
+  exit 1
 fi
 
 
@@ -138,7 +142,7 @@ sudo -v
 # Add override and backup paths to override system binaries and add new applications, respectively.
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH:/usr/local/opt
 buildPathAddition="export PATH=\$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:/usr/local/opt"
-if grep -q "$buildPathAddition" ~/.profile
+if grep -q "$buildPathAddition" ~/.zshrc
 then
     echo "Build path already saved..."
 else
@@ -229,6 +233,21 @@ if [ ! -f ~/.gitignore ]; then
 fi
 git config --global core.excludesFile '~/.gitignore'
 
+echo "Install python using pyenv..."
+if grep -q "PYENV_ROOT" ~/.zshrc
+    echo "Pyenv already configured..."
+else
+  echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+  echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+  echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+fi
+
+pyenv install 3
+pyenv local 3
+
+# List of random system configurations
+echo "Updating system settings"
+chflags nohidden ~/Library
 
 # Right now cleanup
 echo "Cleaning up..."
