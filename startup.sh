@@ -16,6 +16,7 @@ apps=(
   github
   istumbler
   java
+  notunes
   sequel-pro
   the-unarchiver
   slack
